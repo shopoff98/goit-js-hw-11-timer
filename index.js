@@ -14,8 +14,8 @@ class CountdownTimer {
   }
 
   setInt = setInterval(() => {
-    const currentDate = Date.now();
-    const time = this.targetDate - currentDate;
+    const nowDate = Date.now();
+    const time = this.targetDate - nowDate;
     this.updateClockface(time);
 this.timeFinish(time);
   }, 1000);
@@ -43,14 +43,7 @@ this.timeFinish(time);
     }
   }
 };
-const timer = new CountdownTimer({
+new CountdownTimer({
   selector: "#timer-1",
   targetDate: new Date("Oct 31, 2021"),
 });
-
-document.body.onload = startTimer;
- 
-  function startTimer() {
-
-    timer.setInt;
-  }
